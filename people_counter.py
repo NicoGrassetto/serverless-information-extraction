@@ -44,7 +44,7 @@ class ContentUnderstandingClient:
             print(f"📄 Image Description: {description}")
             
         return {
-            'people_count': people_count,
+            'people_counts': people_count,
             'description': description,
             'full_results': results
         }
