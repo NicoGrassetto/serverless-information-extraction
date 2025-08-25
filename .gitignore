@@ -10,7 +10,7 @@ appsettings.json
 local.settings.json
 
 # Azure Functions Core Tools
-.vscode/
+
 .azure/
 
 # Python virtual environment
@@ -60,3 +60,6 @@ node_modules/
 
 # Yarn Integrity file
 .yarn-integrity
+
+.python_packages
+.venv
