@@ -1,0 +1,12 @@
+This is a test document for the serverless information extraction system.
+
+The document contains sample text that will be processed by the Azure Function.
+It includes multiple lines and some basic information that can be extracted.
+
+Key points:
+- Document processing
+- Text extraction
+- Metadata analysis
+- Azure Functions integration
+
+This text will be analyzed for word count, character count, and other basic metrics.
