@@ -48,10 +48,40 @@ The Python Azure Function (`src/function_app.py`) includes:
 ## Deployment
 
 ### Prerequisites
-- Azure CLI installed and authenticated
+- Azure CLI installed and authenticated (`az login`)
+- Azure Functions Core Tools installed
 - Azure subscription with sufficient permissions
 
-### Deploy Infrastructure
+### Option 1: Automated Deployment (Recommended)
+
+Use the provided deployment scripts to deploy both infrastructure and function in one command:
+
+#### Windows (PowerShell)
+```powershell
+# Run from the project root directory
+.\deploy.ps1
+```
+
+#### Linux/macOS (Bash)
+```bash
+# Make script executable (Linux/macOS only)
+chmod +x deploy.sh
+
+# Run from the project root directory
+./deploy.sh
+```
+
+The deployment script will:
+1. ✅ Check prerequisites (Azure CLI, Functions Core Tools, login status)
+2. ✅ Create resource group if it doesn't exist
+3. ✅ Deploy infrastructure using Bicep templates
+4. ✅ Deploy the Azure Function
+5. ✅ Test the deployment with health check
+6. ✅ Provide useful next steps and commands
+
+### Option 2: Manual Deployment
+
+#### Deploy Infrastructure
 
 1. Clone this repository
 2. Navigate to the project directory
@@ -68,16 +98,16 @@ az deployment group create \
   --parameters infra/main.parameters.json
 ```
 
-### Deploy Function App
+#### Deploy Function App
 
 1. Install Azure Functions Core Tools
 2. Deploy the function:
 
 ```bash
-# Navigate to the project root
+# Navigate to the project root (where function_app.py is located)
 cd serverless-information-extraction
 
-# Deploy function app (replace with your function app name)
+# Deploy function app (replace with your function app name from infrastructure output)
 func azure functionapp publish <your-function-app-name>
 ```
 
