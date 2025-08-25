@@ -171,6 +171,10 @@ resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
           name: 'COSMOS_DB_CONTAINER_NAME'
           value: cosmosDbContainerName
         }
+        {
+          name: 'CosmosDbConnectionString'
+          value: 'AccountEndpoint=${cosmosDbAccount.properties.documentEndpoint};AccountKey=${cosmosDbAccount.listKeys().primaryMasterKey}'
+        }
       ]
     }
   }

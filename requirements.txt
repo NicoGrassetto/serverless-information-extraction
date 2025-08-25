@@ -1,10 +1,8 @@
 # Azure Functions Core
 azure-functions==1.18.0
 
-# Azure SDK packages
-azure-cosmos==4.5.1
+# Azure SDK packages (reduced since we're using output bindings for Cosmos DB)
 azure-storage-blob==12.19.0
-azure-identity==1.15.0
 
 # Additional packages for document processing
 # You can add more packages based on your specific needs:
