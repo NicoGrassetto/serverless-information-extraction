@@ -2,7 +2,7 @@
 # This script deploys both the Azure infrastructure and the Azure Function
 
 param(
-    [string]$ResourceGroup = "rg-info-extraction-dev",
+    [string]$ResourceGroup = "rg-info-extraction-$(Get-Date -Format 'yyyyMMdd-HHmmss')",
     [string]$BicepTemplate = "infra/main.bicep",
     [string]$BicepParameters = "infra/main.parameters.json"
 )

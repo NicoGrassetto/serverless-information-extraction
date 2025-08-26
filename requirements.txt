@@ -4,6 +4,9 @@ azure-functions==1.18.0
 # Azure SDK packages (reduced since we're using output bindings for Cosmos DB)
 azure-storage-blob==12.19.0
 
+# HTTP requests for AI Content Understanding
+requests==2.31.0
+
 # Additional packages for document processing
 # You can add more packages based on your specific needs:
 # PyPDF2==3.0.1          # For PDF processing

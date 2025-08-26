@@ -1,0 +1,111 @@
+{
+  "name": "FineExtractionSchema",
+  "description": "Extract key information from parking fines and traffic violation documents.",
+  "version": "1.0",
+  "fields": [
+    {
+      "name": "FileName",
+      "type": "string",
+      "required": true,
+      "description": "The name of the fine document file."
+    },
+    {
+      "name": "FineDate",
+      "type": "date",
+      "required": true,
+      "description": "The date when the fine was issued or the violation occurred."
+    },
+    {
+      "name": "AmountToPay",
+      "type": "number",
+      "required": true,
+      "description": "The monetary amount that needs to be paid for the fine."
+    },
+    {
+      "name": "Currency",
+      "type": "string",
+      "required": false,
+      "description": "The currency of the fine amount.",
+      "enum": ["USD", "EUR", "GBP", "SEK", "NOK", "DKK", "CHF", "CAD", "AUD"],
+      "pattern": "[A-Z]{3}"
+    },
+    {
+      "name": "LicensePlate",
+      "type": "string",
+      "required": true,
+      "description": "The license plate number of the vehicle that received the fine."
+    },
+    {
+      "name": "DueDate",
+      "type": "date",
+      "required": true,
+      "description": "The due date for payment of the fine."
+    },
+    {
+      "name": "FineNumber",
+      "type": "string",
+      "required": false,
+      "description": "The unique identifier or reference number for the fine.",
+      "pattern": "[A-Z0-9-_]+"
+    },
+    {
+      "name": "ViolationType",
+      "type": "string",
+      "required": false,
+      "description": "The type of violation that resulted in the fine.",
+      "enum": ["parking", "speeding", "traffic_light", "stop_sign", "no_parking", "expired_meter", "handicap_parking", "other"]
+    },
+    {
+      "name": "Location",
+      "type": "string",
+      "required": false,
+      "description": "The location where the violation occurred (street address, intersection, etc.)."
+    },
+    {
+      "name": "IssuingAuthority",
+      "type": "string",
+      "required": false,
+      "description": "The authority or organization that issued the fine (e.g., city parking authority, police department)."
+    },
+    {
+      "name": "VehicleDetails",
+      "type": "object",
+      "required": false,
+      "description": "Additional vehicle information if available.",
+      "fields": [
+        {
+          "name": "Make",
+          "type": "string",
+          "description": "Vehicle manufacturer (e.g., Toyota, BMW)."
+        },
+        {
+          "name": "Model",
+          "type": "string",
+          "description": "Vehicle model."
+        },
+        {
+          "name": "Color",
+          "type": "string",
+          "description": "Vehicle color."
+        },
+        {
+          "name": "Year",
+          "type": "string",
+          "description": "Vehicle year."
+        }
+      ]
+    },
+    {
+      "name": "PaymentInstructions",
+      "type": "string",
+      "required": false,
+      "description": "Instructions on how to pay the fine (website, phone number, address)."
+    },
+    {
+      "name": "LateFee",
+      "type": "number",
+      "required": false,
+      "description": "Additional fee charged if payment is made after the due date."
+    }
+  ]
+}
