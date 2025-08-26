@@ -16,6 +16,9 @@
     },
     "cosmosDbAccountName": {
       "value": "info-extraction-cosmos"
+    },
+    "aiContentUnderstandingName": {
+      "value": "info-content-understanding"
     }
   }
 }
